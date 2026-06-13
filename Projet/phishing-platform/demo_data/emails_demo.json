@@ -1,0 +1,44 @@
+[
+  {
+    "_attendu": "eleve",
+    "sender": "securite@paypa1-verification.tk",
+    "subject": "URGENT : votre compte sera suspendu sous 24h",
+    "body": "Cher client, nous avons detecte une activite inhabituelle. Votre compte sera bloque immediatement si vous ne confirmez pas votre mot de passe et votre numero de carte bancaire. Cliquez ici maintenant : http://192.168.45.12/secure-login. Une piece jointe est ci-jointe.",
+    "has_attachment": true
+  },
+  {
+    "_attendu": "eleve",
+    "sender": "service-client@amaz0n-livraison.xyz",
+    "subject": "Probleme avec votre colis, action requise",
+    "body": "Votre colis est bloque. Pour le liberer, validez vos informations bancaires en urgence via https://bit.ly/colis-amazon. Derniere chance avant retour a l'expediteur.",
+    "has_attachment": false
+  },
+  {
+    "_attendu": "moyen",
+    "sender": "newsletter@promo-incroyable.click",
+    "subject": "Offre exclusive, agissez maintenant",
+    "body": "Profitez de -70% aujourd'hui seulement. Cliquez vite sur https://tinyurl.com/promo70 pour en profiter avant ce soir.",
+    "has_attachment": false
+  },
+  {
+    "_attendu": "moyen",
+    "sender": "rh@mon-entreprise-rh.work",
+    "subject": "Mise a jour de vos informations",
+    "body": "Bonjour, merci de mettre a jour vos informations sur le portail : http://portail-rh.work/login avant la fin de semaine.",
+    "has_attachment": false
+  },
+  {
+    "_attendu": "faible",
+    "sender": "marie.dupont@mon-entreprise.com",
+    "subject": "Compte rendu de la reunion de lundi",
+    "body": "Bonjour a tous, vous trouverez le compte rendu de notre reunion de lundi. N'hesitez pas si vous avez des questions. Bonne journee, Marie.",
+    "has_attachment": true
+  },
+  {
+    "_attendu": "faible",
+    "sender": "notifications@github.com",
+    "subject": "Votre build a reussi",
+    "body": "Le pipeline d'integration continue du depot projet-phishing s'est termine avec succes. Aucune action n'est requise de votre part.",
+    "has_attachment": false
+  }
+]

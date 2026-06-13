@@ -1,0 +1,9 @@
+# Dependances du projet (Python 3.10+)
+# Aucune API payante, aucun service cloud. Tout tourne en local.
+
+Pyro5==5.16          # RPC / objet distant pour AnalysisService
+PySide6>=6.6         # interface graphique native (client)
+pyinstaller>=6.0     # compilation de l'appli native (.app / .exe)
+
+# Note : AuthService, AuditService et l'API Gateway n'utilisent que la
+# librairie standard de Python (http.server, urllib, sqlite3, hashlib, secrets).

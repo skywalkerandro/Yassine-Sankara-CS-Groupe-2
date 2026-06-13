@@ -1,0 +1,90 @@
+<svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <style>
+    .box { fill:#ffffff; stroke:#2c3e50; stroke-width:2; rx:8; }
+    .svc { fill:#eaf2f8; stroke:#2874a6; stroke-width:2; }
+    .db  { fill:#fef9e7; stroke:#b7950b; stroke-width:2; }
+    .gw  { fill:#e8f8f5; stroke:#117a65; stroke-width:2; }
+    .ext { fill:#fdedec; stroke:#922b21; stroke-width:2; }
+    .title { font-size:15px; font-weight:bold; fill:#1b2631; }
+    .sub { font-size:11px; fill:#566573; }
+    .lbl { font-size:11px; fill:#2c3e50; }
+    .arrow { stroke:#34495e; stroke-width:1.6; fill:none; marker-end:url(#a); }
+    .async { stroke:#b7950b; stroke-width:1.6; fill:none; stroke-dasharray:6 4; marker-end:url(#a); }
+    .head { font-size:18px; font-weight:bold; fill:#1b2631; }
+  </style>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 z" fill="#34495e"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="30" text-anchor="middle" class="head">Système de Gestion Documentaire Distribué — Architecture logique</text>
+
+  <!-- Client -->
+  <rect x="370" y="55" width="160" height="48" rx="8" class="box ext"/>
+  <text x="450" y="78" text-anchor="middle" class="title">Client</text>
+  <text x="450" y="94" text-anchor="middle" class="sub">Web / Application</text>
+
+  <!-- API Gateway -->
+  <rect x="330" y="140" width="240" height="56" rx="8" class="box gw"/>
+  <text x="450" y="164" text-anchor="middle" class="title">API Gateway</text>
+  <text x="450" y="182" text-anchor="middle" class="sub">Routage · Rate limiting · Validation tokens</text>
+
+  <line x1="450" y1="103" x2="450" y2="140" class="arrow"/>
+  <text x="460" y="125" class="lbl">HTTPS / TLS</text>
+
+  <!-- Services row -->
+  <rect x="60"  y="270" width="180" height="64" rx="8" class="box svc"/>
+  <text x="150" y="295" text-anchor="middle" class="title">Auth Service</text>
+  <text x="150" y="312" text-anchor="middle" class="sub">Login · JWT · Rôles</text>
+
+  <rect x="360" y="270" width="180" height="64" rx="8" class="box svc"/>
+  <text x="450" y="295" text-anchor="middle" class="title">Stockage Service</text>
+  <text x="450" y="312" text-anchor="middle" class="sub">CRUD documents · Métadonnées</text>
+
+  <rect x="660" y="270" width="180" height="64" rx="8" class="box svc"/>
+  <text x="750" y="295" text-anchor="middle" class="title">Recherche Service</text>
+  <text x="750" y="312" text-anchor="middle" class="sub">Indexation · Full-text</text>
+
+  <!-- Gateway to services -->
+  <path d="M380,196 C300,230 200,240 150,270" class="arrow"/>
+  <path d="M450,196 L450,270" class="arrow"/>
+  <path d="M520,196 C600,230 700,240 750,270" class="arrow"/>
+  <text x="250" y="235" class="lbl">REST</text>
+  <text x="600" y="235" class="lbl">REST</text>
+
+  <!-- Notification (async) -->
+  <rect x="360" y="410" width="180" height="56" rx="8" class="box svc" stroke-dasharray="4 3"/>
+  <text x="450" y="433" text-anchor="middle" class="title">Notifications</text>
+  <text x="450" y="450" text-anchor="middle" class="sub">(optionnel) Pub/Sub</text>
+
+  <!-- Stockage -> indexation async + notification async -->
+  <path d="M540,300 C620,360 700,360 750,334" class="async"/>
+  <text x="620" y="345" class="lbl" fill="#b7950b">indexation (async)</text>
+  <path d="M450,334 L450,410" class="async"/>
+  <text x="460" y="375" class="lbl" fill="#b7950b">événement (async)</text>
+
+  <!-- Databases -->
+  <ellipse cx="150" cy="540" rx="70" ry="26" class="db"/>
+  <text x="150" y="538" text-anchor="middle" class="title">PostgreSQL</text>
+  <text x="150" y="554" text-anchor="middle" class="sub">Users · Tokens</text>
+
+  <ellipse cx="450" cy="540" rx="70" ry="26" class="db"/>
+  <text x="450" y="538" text-anchor="middle" class="title">MongoDB / S3</text>
+  <text x="450" y="554" text-anchor="middle" class="sub">Documents</text>
+
+  <ellipse cx="750" cy="540" rx="70" ry="26" class="db"/>
+  <text x="750" y="538" text-anchor="middle" class="title">Index</text>
+  <text x="750" y="554" text-anchor="middle" class="sub">Elasticsearch</text>
+
+  <line x1="150" y1="334" x2="150" y2="514" class="arrow"/>
+  <line x1="450" y1="334" x2="450" y2="514" class="arrow"/>
+  <line x1="750" y1="334" x2="750" y2="514" class="arrow"/>
+
+  <!-- Legend -->
+  <rect x="60" y="595" width="22" height="0" />
+  <line x1="60" y1="600" x2="95" y2="600" class="arrow"/>
+  <text x="100" y="604" class="lbl">Appel synchrone (REST)</text>
+  <line x1="320" y1="600" x2="355" y2="600" class="async"/>
+  <text x="360" y="604" class="lbl">Appel asynchrone (message / événement)</text>
+</svg>

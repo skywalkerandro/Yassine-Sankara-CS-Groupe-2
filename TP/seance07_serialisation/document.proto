@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package tp7;
+
+// Document — schéma Protocol Buffers (équivalent du contrat JSON du TP7.1).
+// Les numéros de champ (= 1, = 2, ...) sont l'identité binaire sur le réseau :
+// on ne les réutilise JAMAIS, même après suppression d'un champ.
+message Document {
+  int32  id             = 1;
+  string title          = 2;
+  string author         = 3;
+  repeated string tags  = 4;
+  string classification = 5;
+
+  // Champ ajouté en évolution de schéma (compatibilité arrière).
+  // Un lecteur qui ne connaît pas le champ 6 l'ignore silencieusement.
+  string priority       = 6;
+}

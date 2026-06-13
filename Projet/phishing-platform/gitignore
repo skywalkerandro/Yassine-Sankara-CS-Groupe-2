@@ -1,0 +1,48 @@
+# ── Environnements Python ──────────────────────────────────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── Données générées (base + logs) ────────────────────────────────────────
+data/platform.db
+data/logs/
+*.log
+
+# ── Build PyInstaller ──────────────────────────────────────────────────────
+build/
+dist/
+*.spec
+
+# ── macOS ─────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# ── Windows ───────────────────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── IDE ───────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+.ipynb_checkpoints/
+
+# ── Divers ────────────────────────────────────────────────────────────────
+*.egg-info/
+.eggs/
+*.cover
+.coverage
+htmlcov/
